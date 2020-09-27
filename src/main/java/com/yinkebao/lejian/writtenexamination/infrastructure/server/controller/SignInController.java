@@ -22,6 +22,11 @@ public class SignInController {
 	@Resource
 	ApplicationServiceRegistry applicationServiceRegistry;
 
+	/**
+	 * 注册手机号
+	 *
+	 * @param command 注册命令
+	 */
 	@PostMapping("/signIn")
 	public void signIn(@RequestBody MobileSignInCommand command){
 		applicationServiceRegistry.getLeJanApplicationService().signIn(command);

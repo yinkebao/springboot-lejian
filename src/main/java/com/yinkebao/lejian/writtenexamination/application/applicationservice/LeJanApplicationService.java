@@ -35,13 +35,13 @@ public class LeJanApplicationService {
 	 *
 	 * @param command 注册命令
 	 */
-	@Transactional(rollbackFor = RuntimeException.class)
+	@Transactional(rollbackFor = Exception.class)
 	public void signIn(MobileSignInCommand command){
-		String mobileStr = command.getMobile().replace(""," ");
-		if (StringValidator.numberValidate(mobileStr)){
+		String mobileStr = command.getMobile().replace(" ","");
+		if (!StringValidator.numberValidate(mobileStr)){
 			ExceptionUtil.throwError(logger, ErrorCode.MOBILE_ILLEGAL);
 		}
-		if (StringValidator.mobileValidate(command.getMobile())){
+		if (!StringValidator.mobileValidate(command.getMobile())){
 			ExceptionUtil.throwError(logger,ErrorCode.MOBILE_CHINA_ILLEGAL);
 		}
 		if (mobileRepository.get(command.getMobile()) != null){

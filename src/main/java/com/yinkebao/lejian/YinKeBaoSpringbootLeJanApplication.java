@@ -15,7 +15,6 @@ import org.springframework.transaction.annotation.EnableTransactionManagement;
  */
 @ComponentScan(basePackages = "com.yinkebao.lejian.**")
 @ServletComponentScan(basePackages = "com.yinkebao.lejian.**")
-@EnableTransactionManagement
 @SpringBootApplication(exclude= {DataSourceAutoConfiguration.class},scanBasePackages = "com.yinkebao.lejian.**")
 public class YinKeBaoSpringbootLeJanApplication {
 
