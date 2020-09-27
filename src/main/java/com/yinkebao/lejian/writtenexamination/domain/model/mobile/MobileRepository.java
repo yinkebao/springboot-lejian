@@ -13,7 +13,7 @@ public interface MobileRepository {
 	 *
 	 * @param mobile 手机信息
 	 */
-	public void save(Mobile mobile);
+	void save(Mobile mobile);
 
 	/**
 	 * 根据手机号获取手机信息
@@ -21,6 +21,6 @@ public interface MobileRepository {
 	 * @param mobile 手机号获取手机
 	 * @return Mobile
 	 */
-	public Mobile get(String mobile);
+	Mobile get(String mobile);
 
 }

@@ -1,6 +1,6 @@
 package com.yinkebao.lejian.writtenexamination.application;
 
-import com.yinkebao.lejian.writtenexamination.application.applicationservice.LeJanApplicationService;
+import com.yinkebao.lejian.writtenexamination.application.applicationservice.MobileApplicationService;
 import javax.annotation.Resource;
 import lombok.Getter;
 import org.springframework.stereotype.Component;
@@ -16,6 +16,6 @@ import org.springframework.stereotype.Component;
 public class ApplicationServiceRegistry {
 
 	@Resource
-	private LeJanApplicationService leJanApplicationService;
+	private MobileApplicationService leJanApplicationService;
 
 }

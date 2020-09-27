@@ -11,7 +11,7 @@ import javax.annotation.Resource;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Service;
-import org.springframework.transaction.annotation.Transactional;
+import sun.misc.Cache;
 
 /**
  * @ClassName LeJanApplicationService
@@ -20,9 +20,9 @@ import org.springframework.transaction.annotation.Transactional;
  * @Date 2020/9/27
  */
 @Service
-public class LeJanApplicationService {
+public class MobileApplicationService {
 
-	private static Logger logger = LoggerFactory.getLogger(LeJanApplicationService.class);
+	private static Logger logger = LoggerFactory.getLogger(MobileApplicationService.class);
 
 	@Resource
 	MobileDomainService mobileDomainService;
@@ -35,8 +35,7 @@ public class LeJanApplicationService {
 	 *
 	 * @param command 注册命令
 	 */
-	@Transactional(rollbackFor = Exception.class)
-	public void signIn(MobileSignInCommand command){
+	public void register(MobileSignInCommand command){
 		String mobileStr = command.getMobile().replace(" ","");
 		if (!StringValidator.numberValidate(mobileStr)){
 			ExceptionUtil.throwError(logger, ErrorCode.MOBILE_ILLEGAL);
@@ -47,7 +46,7 @@ public class LeJanApplicationService {
 		if (mobileRepository.get(command.getMobile()) != null){
 			ExceptionUtil.throwError(logger,ErrorCode.MOBILE_EXIST);
 		}
-		mobileDomainService.signIn(Mobile.builder().mobile(command.getMobile()).build());
+		mobileDomainService.register(Mobile.builder().mobile(command.getMobile()).build());
 	}
 
 }

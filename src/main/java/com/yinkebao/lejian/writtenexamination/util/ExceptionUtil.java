@@ -20,7 +20,7 @@ public class ExceptionUtil {
 	 */
 	public static void throwError(Logger logger, ErrorCode errorCode){
 		logger.error(errorCode.toJsonObject().toJSONString());
-		TransactionAspectSupport.currentTransactionStatus().setRollbackOnly();
+//		TransactionAspectSupport.currentTransactionStatus().setRollbackOnly();
 		throw new RuntimeException(errorCode.getError());
 	}
 
@@ -30,7 +30,7 @@ public class ExceptionUtil {
 	 * @param errorCode 异常编码
 	 */
 	public static void throwError(ErrorCode errorCode){
-		TransactionAspectSupport.currentTransactionStatus().setRollbackOnly();
+//		TransactionAspectSupport.currentTransactionStatus().setRollbackOnly();
 		throw new RuntimeException(errorCode.getError());
 	}
 

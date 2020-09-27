@@ -5,7 +5,7 @@ import org.springframework.stereotype.Service;
 
 /**
  * @ClassName MobileDomainService
- * @Description
+ * @Description 手机信息领域行为服务层
  * @Author ykb
  * @Date 2020/9/27
  */
@@ -20,7 +20,7 @@ public class MobileDomainService {
 	 *
 	 * @param mobile 手机信息
 	 */
-	public void signIn(Mobile mobile){
+	public void register(Mobile mobile){
 		mobileRepository.save(mobile);
 	}
 

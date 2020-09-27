@@ -24,7 +24,7 @@ public class SignInTest {
 	@Test
 	public void sign() {
 		applicationServiceRegistry.getLeJanApplicationService()
-				.signIn(MobileSignInCommand.builder().mobile("15556532756").build());
+				.register(MobileSignInCommand.builder().mobile("15556532756").build());
 	}
 
 }

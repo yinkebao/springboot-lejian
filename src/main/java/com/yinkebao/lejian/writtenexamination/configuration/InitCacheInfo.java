@@ -18,6 +18,7 @@ public class InitCacheInfo implements CommandLineRunner {
 	 */
 	@Override
 	public void run(String... args) throws Exception {
+		//todo 缓存替换
 		Cache cache = new Cache();
 		cache.put("15556574657","15556574657");
 		cache.put("17308765764","17308765764");
