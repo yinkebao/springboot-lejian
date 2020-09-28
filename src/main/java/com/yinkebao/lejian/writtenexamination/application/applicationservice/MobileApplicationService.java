@@ -11,7 +11,6 @@ import javax.annotation.Resource;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Service;
-import sun.misc.Cache;
 
 /**
  * @ClassName LeJanApplicationService
@@ -32,6 +31,7 @@ public class MobileApplicationService {
 
 	/**
 	 * 注册手机号
+	 * 未使用真正的db层 所以未开启事务
 	 *
 	 * @param command 注册命令
 	 */
@@ -43,7 +43,7 @@ public class MobileApplicationService {
 		if (!StringValidator.mobileValidate(command.getMobile())){
 			ExceptionUtil.throwError(logger,ErrorCode.MOBILE_CHINA_ILLEGAL);
 		}
-		if (mobileRepository.get(command.getMobile()) != null){
+		if (mobileRepository.ifExist(command.getMobile())){
 			ExceptionUtil.throwError(logger,ErrorCode.MOBILE_EXIST);
 		}
 		mobileDomainService.register(Mobile.builder().mobile(command.getMobile()).build());

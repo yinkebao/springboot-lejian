@@ -1,5 +1,7 @@
 package com.yinkebao.lejian.writtenexamination.application.command;
 
+import io.swagger.annotations.ApiModel;
+import io.swagger.annotations.ApiModelProperty;
 import java.io.Serializable;
 import lombok.Builder;
 import lombok.Getter;
@@ -15,11 +17,13 @@ import lombok.Setter;
 @Getter
 @Setter
 @NoArgsConstructor
+@ApiModel("手机号注册命令")
 public class MobileSignInCommand implements Serializable {
 
 	/**
 	 * 手机号
 	 */
+	@ApiModelProperty(value = "手机号", required = true)
 	private String mobile;
 
 	@Builder

@@ -19,8 +19,8 @@ public interface MobileRepository {
 	 * 根据手机号获取手机信息
 	 *
 	 * @param mobile 手机号获取手机
-	 * @return Mobile
+	 * @return Boolean
 	 */
-	Mobile get(String mobile);
+	Boolean ifExist(String mobile);
 
 }

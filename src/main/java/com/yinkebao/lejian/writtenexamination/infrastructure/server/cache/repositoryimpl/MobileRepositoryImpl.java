@@ -2,8 +2,10 @@ package com.yinkebao.lejian.writtenexamination.infrastructure.server.cache.repos
 
 import com.yinkebao.lejian.writtenexamination.domain.model.mobile.Mobile;
 import com.yinkebao.lejian.writtenexamination.domain.model.mobile.MobileRepository;
+import javax.annotation.Resource;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.redis.core.RedisTemplate;
 import org.springframework.stereotype.Service;
-import sun.misc.Cache;
 
 /**
  * @ClassName MobileRepositoryImpl
@@ -14,27 +16,31 @@ import sun.misc.Cache;
 @Service
 public class MobileRepositoryImpl implements MobileRepository {
 
+	@Resource
+	private RedisTemplate<String, Object> redisTemplate;
+
+	public void setRedisTemplate(RedisTemplate<String, Object> redisTemplate) {
+		this.redisTemplate = redisTemplate;
+	}
+
 	/**
-	 * 持久化手机信息
+	 * 持久化手机信息(模拟)
 	 *
 	 * @param mobile 手机信息
 	 */
 	@Override
 	public void save(Mobile mobile) {
-		Cache cache = new Cache();
-		cache.put(mobile.getMobile(),mobile.getMobile());
+		redisTemplate.opsForValue().set(mobile.getMobile(),mobile.getMobile());
 	}
 
 	/**
-	 * 根据手机号获取手机信息
+	 * 判断手机号是否存在
 	 *
-	 * @param mobile 手机号获取手机
+	 * @param mobile 手机号
 	 */
 	@Override
-	public Mobile get(String mobile) {
-		Cache cache = new Cache();
-		Object o = cache.get(mobile);
-		return o == null ? null : Mobile.builder().mobile((String) o).build();
+	public Boolean ifExist(String mobile) {
+		return redisTemplate.hasKey(mobile);
 	}
 
 }
