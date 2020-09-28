@@ -8,4 +8,4 @@
 2、调试
     
   1. 访问http://localhost:8088/doc.html，使用swagger进行接口调试
-  2. 使用RegisterTest类中的register方法进行调试
+  2. 使用LeJianTest类中对应的方法进行调试

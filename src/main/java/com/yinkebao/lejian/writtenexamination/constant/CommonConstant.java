@@ -18,4 +18,9 @@ public class CommonConstant {
 	 */
 	public static final String NUMBER_PATTERN = "[0-9]*";
 
+	/**
+	 * 字符串正则
+	 */
+	public static final String CHAR_NUMBER_PATTERN = "[a-z|A-Z|0-9]*";
+
 }

@@ -26,6 +26,20 @@ public class StringValidator {
 	}
 
 	/**
+	 * 校验字符串只包含数字、字母
+	 *
+	 * @param str 待校验字符串
+	 * @return Boolean
+	 */
+	public static Boolean charAndNumberValidate(String str){
+		if (str == null || "".equals(str)){
+			return false;
+		}
+		Pattern pattern = Pattern.compile(CommonConstant.CHAR_NUMBER_PATTERN);
+		return pattern.matcher(str).matches();
+	}
+
+	/**
 	 * 校验字符串是否是合法的手机号
 	 *
 	 * @param str 待校验字符串

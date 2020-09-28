@@ -13,8 +13,8 @@ import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Service;
 
 /**
- * @ClassName LeJanApplicationService
- * @Description
+ * @ClassName MobileApplicationService
+ * @Description 手机信息应用服务层
  * @Author ykb
  * @Date 2020/9/27
  */
@@ -31,7 +31,7 @@ public class MobileApplicationService {
 
 	/**
 	 * 注册手机号
-	 * 未使用真正的db层 所以未开启事务
+	 * 使用真正db层时添加@Transactional(rollbackFor = Exception.class)开启事务
 	 *
 	 * @param command 注册命令
 	 */
