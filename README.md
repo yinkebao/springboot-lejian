@@ -1,5 +1,5 @@
 # springboot-lejian
-1、项目启动：
+1、项目启动
 
   1. 启动redis
   2. 修改application.properties中redis的host和password参数
