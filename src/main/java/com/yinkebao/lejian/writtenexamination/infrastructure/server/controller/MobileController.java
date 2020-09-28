@@ -2,6 +2,8 @@ package com.yinkebao.lejian.writtenexamination.infrastructure.server.controller;
 
 import com.yinkebao.lejian.writtenexamination.application.ApplicationServiceRegistry;
 import com.yinkebao.lejian.writtenexamination.application.command.MobileSignInCommand;
+import com.yinkebao.lejian.writtenexamination.application.responseresult.ResponseResult;
+import com.yinkebao.lejian.writtenexamination.application.responseresult.ResponseResultFactory;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
 import javax.annotation.Resource;
@@ -32,8 +34,9 @@ public class MobileController {
 	 */
 	@PostMapping("/register")
 	@ApiOperation(value = "注册手机号")
-	public void register(@RequestBody MobileSignInCommand command){
-		applicationServiceRegistry.getLeJanApplicationService().register(command);
+	public ResponseResult<Void> register(@RequestBody MobileSignInCommand command){
+		applicationServiceRegistry.getMobileApplicationService().register(command);
+		return ResponseResultFactory.successResult();
 	}
 
 }

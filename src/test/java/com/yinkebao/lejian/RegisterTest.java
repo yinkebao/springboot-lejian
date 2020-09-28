@@ -16,15 +16,15 @@ import org.springframework.test.context.junit4.SpringRunner;
  */
 @RunWith(SpringRunner.class)
 @SpringBootTest
-public class SignInTest {
+public class RegisterTest {
 
 	@Autowired
 	ApplicationServiceRegistry applicationServiceRegistry;
 
 	@Test
-	public void sign() {
-		applicationServiceRegistry.getLeJanApplicationService()
-				.register(MobileSignInCommand.builder().mobile("15556532756").build());
+	public void register() {
+		applicationServiceRegistry.getMobileApplicationService()
+				.register(MobileSignInCommand.builder().mobile("15556574657").build());
 	}
 
 }

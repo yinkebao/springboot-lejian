@@ -1,6 +1,7 @@
 package com.yinkebao.lejian.writtenexamination.constant.enums;
 
 import com.alibaba.fastjson.JSONObject;
+import com.yinkebao.lejian.writtenexamination.exception.Error;
 import lombok.Getter;
 
 /**
@@ -10,19 +11,18 @@ import lombok.Getter;
  * @Date 2020/9/27
  */
 @Getter
-public enum ErrorCode {
+public enum ErrorCode implements Error {
 
 	/**
 	 * 异常信息枚举类型
 	 */
-	MOBILE_EXIST("手机号已经被其他用户注册",1001),
-	MOBILE_ILLEGAL("非法手机号,本手机号无法注册",1002),
-	MOBILE_CHINA_ILLEGAL("中国大陆非法手机号码",1003),
+	MOBILE_EXIST("yinkebao.error.mobile.not.exists"),
+	MOBILE_ILLEGAL("yinkebao.error.mobile.illegal"),
+	MOBILE_CHINA_ILLEGAL("yinkebao.error.mobile.china.illegal")
 	;
 
-	ErrorCode(String error, Integer code) {
+	ErrorCode(String error) {
 		this.error = error;
-		this.code = code;
 	}
 
 	/**
@@ -30,25 +30,13 @@ public enum ErrorCode {
 	 */
 	private final String error;
 
-	/**
-	 * 异常编码
-	 */
-	private final Integer code;
-
 
 	public String getErrorMsg() {
 		return this.getError();
 	}
 
-	public Integer getErrorCode() {
-		return this.getCode();
+	@Override
+	public String getName() {
+		return this.getErrorMsg();
 	}
-
-	public JSONObject toJsonObject(){
-		JSONObject jsonObject = new JSONObject();
-		jsonObject.put("error", this.error);
-		jsonObject.put("code", this.code);
-		return jsonObject;
-	}
-
 }

@@ -1,9 +1,8 @@
-package com.yinkebao.lejian.writtenexamination.infrastructure.server.cache.repositoryimpl;
+package com.yinkebao.lejian.writtenexamination.infrastructure.server.redis.repositoryimpl;
 
 import com.yinkebao.lejian.writtenexamination.domain.model.mobile.Mobile;
 import com.yinkebao.lejian.writtenexamination.domain.model.mobile.MobileRepository;
 import javax.annotation.Resource;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.redis.core.RedisTemplate;
 import org.springframework.stereotype.Service;
 

@@ -1,4 +1,4 @@
-package com.yinkebao.lejian.writtenexamination.configuration;
+package com.yinkebao.lejian.writtenexamination.configuration.runner;
 
 import javax.annotation.Resource;
 import org.slf4j.Logger;

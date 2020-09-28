@@ -16,6 +16,6 @@ import org.springframework.stereotype.Component;
 public class ApplicationServiceRegistry {
 
 	@Resource
-	private MobileApplicationService leJanApplicationService;
+	private MobileApplicationService mobileApplicationService;
 
 }
