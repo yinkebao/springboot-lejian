@@ -8,7 +8,7 @@ import lombok.Setter;
 
 /**
  * @ClassName Mobile
- * @Description 手机信息主体
+ * @Description 手机信息领域对象
  * @Author ykb
  * @Date 2020/9/27
  */

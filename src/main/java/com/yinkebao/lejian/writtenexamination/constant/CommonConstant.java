@@ -2,7 +2,7 @@ package com.yinkebao.lejian.writtenexamination.constant;
 
 /**
  * @ClassName CommonConstant
- * @Description
+ * @Description 普通常量类
  * @Author ykb
  * @Date 2020/9/27
  */

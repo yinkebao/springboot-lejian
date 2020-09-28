@@ -7,7 +7,7 @@ import org.slf4j.Logger;
 
 /**
  * @ClassName ExceptionUtil
- * @Description
+ * @Description 业务异常工具类
  * @Author ykb
  * @Date 2020/9/27
  */

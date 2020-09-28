@@ -6,7 +6,7 @@ import java.util.Map;
 
 /**
  * @ClassName ExceptionConstant
- * @Description
+ * @Description 异常信息存储常量
  * @Author ykb
  * @Date 2020/9/28
  */

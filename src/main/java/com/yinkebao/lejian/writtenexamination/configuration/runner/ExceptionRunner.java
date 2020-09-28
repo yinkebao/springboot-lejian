@@ -17,7 +17,7 @@ import org.springframework.stereotype.Component;
 
 /**
  * @ClassName ExceptionRunner
- * @Description
+ * @Description 加载配置文件的自定义异常信息到集合
  * @Author ykb
  * @Date 2020/9/28
  */

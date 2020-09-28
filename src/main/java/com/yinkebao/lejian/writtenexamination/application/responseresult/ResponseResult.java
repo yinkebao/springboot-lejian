@@ -11,7 +11,7 @@ import java.util.Map;
 
 /**
  * @ClassName ResponseResult
- * @Description
+ * @Description 统一返回值结构
  * @Author ykb
  * @Date 2020/9/28
  */

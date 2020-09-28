@@ -10,8 +10,8 @@ import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.test.context.junit4.SpringRunner;
 
 /**
- * @ClassName SignInTest
- * @Description
+ * @ClassName LeJianTest
+ * @Description 测试类
  * @Author ykb
  * @Date 2020/9/27
  */

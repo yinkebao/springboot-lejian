@@ -33,6 +33,12 @@ import org.springframework.http.converter.StringHttpMessageConverter;
 import org.springframework.web.servlet.config.annotation.CorsRegistry;
 import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
 
+/**
+ * @ClassName WebMvcConfiguration
+ * @Description WebMvc配置
+ * @Author ykb
+ * @Date 2020/9/28
+ */
 @Configuration
 @ServletComponentScan
 @EnableConfigurationProperties

@@ -8,7 +8,7 @@ import org.springframework.stereotype.Service;
 
 /**
  * @ClassName MobileRepositoryImpl
- * @Description
+ * @Description 持久层
  * @Author ykb
  * @Date 2020/9/27
  */
